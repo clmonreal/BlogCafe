@@ -63,8 +63,13 @@ img {
 }
 
 /* Header */
-.header {
+.webp .header {
+    background-image: url(../img/banner.webp);
+}
+.no-webp .header {
     background-image: url(../img/banner.jpg);
+}
+.header {
     height: 60rem; /* altura de la imagen */
     background-size: cover; /* para que la imagen tome todo el espacio disponible */
     background-repeat: no-repeat; /* para que no se repita la imagen en el fondo */
@@ -138,12 +143,16 @@ img {
     text-transform: uppercase;
     font-weight: 700; /* asi lo hacemos negrita */
     margin-bottom: 2rem;
+    border: none;
 }
 @media (min-width: 768px) {
     .boton {
         display: inline-block; /* solo la propiedad inline es inmjune a los margin y los width, para que les afecte debemos aplicarle el inline-block */
 
     }
+}
+.boton:hover {
+    cursor: pointer;
 }
 .boton--primario {
     background-color: var(--negro);
@@ -165,15 +174,19 @@ img {
     margin-bottom: 0;
 }
 
-.widget-curso__label {
+.widget-curso__label,
+.curso__label {
     font-family: var(--fuenteHeading);
     font-weight: 700;
 }
-.widget-curso__info {
+.widget-curso__info,
+.curos__info {
     font-weight: 400; /* 400 == regular, 700 == bold */
 }
 .widget-curso__label,
-.widget-curso__info {
+.widget-curso__info,
+.curso__label,
+.curos__info {
     font-size: 2rem;
 }
 
@@ -182,4 +195,70 @@ img {
     background-color: var(--negro);
     padding-bottom: 3rem;
     margin-top: 4rem;
+}
+
+/* Nosotros */
+@media (min-width: 768px) {
+    /*.sobre-nosotros { misma funcionalidad que la clase .sobre-nosotros usando CSS grid pero con mas lineas y usando FlexBox
+        display: flex;
+        gap: 2rem;
+    }
+    .sobre-nosotros__imagen,
+    .sobre-nosotros__texto {
+        flex-basis: 50%;  para que cada una de las clases ocupe el 50% del espacio 
+    }*/
+
+    .sobre-nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+/* Cursos */
+.curso {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+}
+@media (min-width: 768px) {
+    .curso {
+        display:grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+}
+.curso:last-of-type {
+    border-bottom: none;
+}
+
+/* Contacto */
+.contacto-bg {
+    background-image: url(/img/contacto.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.formulario {
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto; /* 5rem hacia arriba */
+    width: 95%;
+    padding: 5rem;
+
+}
+.campo {
+    display: flex; /* esta declaracion debe hacerse siempre en la clase padre, aunque luego la utilicemos en las clases hijas */  
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+.campo__label {
+    flex: 0 0 9rem; /* factor de crecimiento - lo pequeño que se puede hacer - tamaño base (width) */  
+    text-align: right;
+}
+.campo__field {
+    flex: 1; /* factor de crecimiento. Por cada 0 px del label, el field va a recibir 1px, es decir, en este caso si el label va a ocupar 9rem, todo el espacio disponible restante lo va a ocupar el field */
+    border: 1px solid var(--gris);
+}
+.campo__field--textarea {
+    height: 20rem;
 }

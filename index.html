@@ -2,15 +2,31 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--se usa para que se pueda ver bien en dispositivos moviles-->
+    <meta name="description" content="Página Web de Blog de Café"><!-- esta etiqueta meta la añadimos nosotros y es pesonalizable, es donde haces una pequeña descripcion del proyecto -->
     <title>BlogDeCafé</title>
+
+    <link rel="shortcut icon" href="img/coffee.png"> <!--para poner un favicon en la pestaña de la página web-->
+    
+    <!-- Prefetch -->
+    <!-- Permite precargar la proxima pagina que esperamos que el usuario visite para mejorar la rapidez del sitio web -->
+    <link rel="Prefetch" href="nosotros.html" as="document">
+
+    <!-- Preload -->
+    <!-- se recomienda el preload en elementos que se requieran inmediatamente desde en un principio -->
+    <link rel="Preload" href="css/normalize.css" as="style">
     <link rel="stylesheet" href="css/normalize.css">
+    
+    <link rel="Preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="Preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/coffee.png"> <!--para poner un favicon en la pestaña de la página web-->
+
+    <!--<link rel="Preload" href="img/blog1.jpg" as="image"> para mejorar el performance en cuanto a la carga del sitio web, lo quitamos porque mas abajo tenemos soporte de webp-->
 </head>
 <body>
 
@@ -42,7 +58,10 @@
 
             <article class="entrada">
                 <div class="entrada__imagen">
-                    <img src="img/blog1.jpg" alt="imagen blog">
+                    <picture> <!--en caso de soportar el formato webp cargará este formato y no el jpg-->
+                        <source loading="lazy" srcset="img/blog3.webp" type="image/webp">
+                        <img  src="img/blog1.jpg" alt="imagen blog" loading="lazy"> <!--loading lazy para cargar el elemento unicamente cuando lleguemos a el y no cuando cargamos la página-->
+                    </picture>
                 </div>
 
                 <div class="entrada__contenido">
@@ -54,7 +73,10 @@
 
             <article class="entrada">
                 <div class="entrada__imagen">
-                    <img src="img/blog2.jpg" alt="imagen blog">
+                    <picture>
+                        <source loading="lazy" srcset="img/blog2.webp" type="image/webp">
+                        <img  src="img/blog2.jpg" alt="imagen blog" loading="lazy">
+                    </picture>
                 </div>
 
                 <div class="entrada__contenido">
@@ -66,7 +88,10 @@
             
             <article class="entrada">
                 <div class="entrada__imagen">
-                    <img src="img/blog3.jpg" alt="imagen blog">
+                    <picture>
+                        <source loading="lazy" srcset="img/blog3.webp" type="image/webp">
+                        <img  src="img/blog3.jpg" alt="imagen blog" loading="lazy">
+                    </picture>
                 </div>
 
                 <div class="entrada__contenido">
@@ -88,7 +113,7 @@
                     <p class="widget-curso__label">Cupo:
                         <span class="widget-curso__info">20</span>
                     </p>
-                    <a href="entrada.html" class="boton boton--secundario">Más información</a>
+                    <a href="entrada.html" class="boton boton--secundario">Más información sobre nuestros cursos</a> <!--a Google le gusta que en enlaces seamos descriptivos-->
                 </li>
 
                 <li class="widget-curso">
@@ -121,5 +146,7 @@
         </div>
     </footer>
 
+    <!-- Los archivos CSS (estilos) se añaden en la parte superior, pero los archivos JS se añaden al final, antes del cierre del body -->
+    <script src="js/modernizr.js"></script>
 </body>
 </html>
