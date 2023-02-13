@@ -147,7 +147,7 @@ img {
 }
 @media (min-width: 768px) {
     .boton {
-        display: inline-block; /* solo la propiedad inline es inmjune a los margin y los width, para que les afecte debemos aplicarle el inline-block */
+        display: inline-block; /* solo la propiedad inline es inmune a los margin y los width, para que les afecte debemos aplicarle el inline-block */
 
     }
 }
@@ -180,13 +180,13 @@ img {
     font-weight: 700;
 }
 .widget-curso__info,
-.curos__info {
+.cursos__info {
     font-weight: 400; /* 400 == regular, 700 == bold */
 }
 .widget-curso__label,
 .widget-curso__info,
 .curso__label,
-.curos__info {
+.cursos__info {
     font-size: 2rem;
 }
 
@@ -234,7 +234,8 @@ img {
 /* Contacto */
 .contacto-bg {
     background-image: url(/img/contacto.jpg);
-    height: 40rem;
+    width: auto;
+    height: 40%;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -244,6 +245,7 @@ img {
     margin: -5rem auto 0 auto; /* 5rem hacia arriba */
     width: 95%;
     padding: 5rem;
+    z-index: 1000;
 
 }
 .campo {
