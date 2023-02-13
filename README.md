@@ -1,6 +1,14 @@
 # Proyecto Blog de Café
 En este proyecto estamos creando una Página Web totalmente responsive donde trabajamos únicamente la parte Front-End del sitio.
 
+<br>
+<p align="center">
+  <a href="https://blogcafecarlos1.netlify.app" target="blank">
+   <img align="center" src="https://img.shields.io/badge/enlace proyecto-44c5f5?style=for-the-badge" alt="enlace proyecto" height="30px" width="160px" />
+  </a>
+</p>
+</br>
+
 ![image.png](image.png)
 
 # Tecnologías utilizadas
